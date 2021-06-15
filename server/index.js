@@ -11,7 +11,7 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors);
-const PORT = process.env.Port || 5000;
+const PORT = process.env.Port || 80;
 
 mongoose
 .connect(process.env.CONNECTION_URL, {
