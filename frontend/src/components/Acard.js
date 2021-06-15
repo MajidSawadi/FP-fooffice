@@ -1,7 +1,9 @@
-import React from "react";
-import { Card, Button, Container } from "react-bootstrap";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Card, Button } from "react-bootstrap";
 import banner from "../assests/images/banner3.jpg";
 import "./Acard.css";
+
 const Acard = () => {
   return (
     <div>

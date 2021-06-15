@@ -2,15 +2,24 @@ import * as types from "../constaints/adds.constaint";
 
 const initialState = {
   adds: [],
+  loading: false,
 };
 
 const addsReducer = (state = initialState, action) => {
-  switch (action.types) {
-    case "ADD_REQUEST":
-      return state;
+  const { type, payload } = action;
+  switch (type) {
+    case types.POST_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
 
-    case "CREATE_ADD":
-      return state;
+    case types.POST_REQUEST_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        adds: payload.adds,
+      };
 
     default:
       return state;
